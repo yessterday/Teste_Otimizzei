@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="Pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTIMIZZEI | 02 </title>
+    <style>
+        body{   
+            background-color: #363636;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            color: white;
+        }
+        .box-nav{
+            background-color: #1C1C1C;
+            padding: 25px;
+            border-radius: 15px;
+
+        }
+        .box{
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+        input{
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+            color: #363636;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color:  #383a59;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-nav">
+        <h1>Questão 02</h1>
+        <h2>Escreva uma função em PHP ou JavaScript que receba como parâmetro um vetor de inteiros e seu tamanho, e retorne o menor valor presente no vetor.
+        </h2>
+
+        
+    </div>
+    <div class="box">
+        <p>Informe os valores:</p>
+        <label for="vetor">Informe os valores dos vetores (separados por vírgula):</label>
+        <br><br>
+        <input type="text" id="vetor" placeholder="Exemplo: 1, 2, 3, 4, 5">
+        <br><br>
+        
+        <button  onclick="MenorValor()">Enviar</button>
+        <br><br>
+        
+        <div id="resultado"></div>
+    </div>
+    
+</body>
+<script>
+ function MenorValor() {
+        const vetor = document.getElementById("vetor").value.split(",").map(Number);
+        const tamanho = vetor.length;
+        let menor = vetor[0];
+
+        for (let i = 1; i < tamanho; i++) {
+          if (vetor[i] < menor) {
+            menor = vetor[i];
+          }
+        }
+
+        document.getElementById("resultado").innerHTML = `O menor valor no vetor é: ${menor}`;
+      }
+  </script>
+</html>

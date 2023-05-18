@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="Pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTIMIZZEI | 04 </title>
+    <style>
+        body{   
+            background-color: #363636;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            color: white;
+        }
+        .box-nav{
+            background-color: #1C1C1C;
+            padding: 25px;
+            border-radius: 15px;
+
+        }
+        .box{
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+        input{
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color:  #383a59;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-nav">
+        <h1>Questão 04</h1>
+        <h2>Escreva um programa em PHP ou JavaScript que solicite ao usuário a temperatura em graus Celsius e converta para Fahrenheit. O programa deve exibir o resultado na tela.
+        </h2>
+    </div>
+    <div class="box">
+        <p>Informe a Temperatura em Graus Celsius</p>
+        <input type="number" id="temperatura" placeholder="Digite um Valor">
+        <br><br>
+        
+        <button onclick="calculator()">Enviar</button>
+        <br><br>
+        
+        <div id="resultado"></div>
+       
+    </div>
+    
+</body>
+<script>
+    function calculator()
+    {
+        var temp = document.querySelector('#temperatura').value;
+        var result = (temp * 1.8) + 32;
+        alert('Fahrenheit: ' + result);
+    
+    }
+</script>
+</html>

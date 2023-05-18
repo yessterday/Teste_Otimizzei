@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="Pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTIMIZZEI | 01 </title>
+    <style>
+        body{   
+            background-color: #363636;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            color: white;
+        }
+        .box-nav{
+            background-color: #1C1C1C;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        .box{
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+            
+        }
+        input{
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 30%;
+            background-color:  #383a59;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="box-nav">
+        <h1>Questão 01</h1>
+        <h2>Implemente uma pilha em PHP ou JavaScript utilizando uma estrutura de dados do tipo array. A pilha deve possuir os métodos "push" (para inserir um elemento), "pop" (para remover o último elemento inserido) e "top" (para retornar o último elemento inserido sem removê-lo). A pilha deve ser capaz de armazenar valores inteiros.
+        </h2>
+    </div>
+    <div class="box">
+        <p>Informe os valores a serem empilhados</p>
+        <input type="text" id="valor" placeholder="Digite os valores">
+        <br><br>
+        <button onclick="pushValue()">Push</button>
+        <button onclick="popValue()">Pop</button>
+        <button onclick="topValue()">Top</button>
+       
+        <p id="pilha"></p>
+    </div>
+    
+</body>
+<script>
+class Pilha {
+  constructor() {
+    this.pilha = [];
+  }
+
+  push(elemento) {
+    this.pilha.push(elemento);  //Adiciona um novo item a pilha
+  }
+
+  pop() {
+    return this.pilha.pop();  //Remove item do topo pilha
+  }
+
+  top() {
+    return this.pilha[this.pilha.length - 1]; //Devolve o elemento que está no topo da pilha 
+  }
+
+  menorValor() {
+    let menor = this.pilha[0];
+    for (let i = 1; i < this.pilha.length; i++) {
+      if (this.pilha[i] < menor) {
+        menor = this.pilha[i];
+      }
+    }
+    return menor;
+  }
+}
+let pilha = new Pilha();
+
+function pushValue() {
+  let valor = document.getElementById("valor").value;
+  pilha.push(parseInt(valor));
+  document.getElementById("pilha").innerHTML = pilha.pilha.toString();
+}
+function popValue() {
+  pilha.pop();
+  document.getElementById("pilha").innerHTML = pilha.pilha.toString();
+}
+function topValue() {
+  let topo = pilha.top();
+  if (topo === undefined) {
+    document.getElementById("pilha").innerHTML = "A pilha está vazia";
+  } else {
+    document.getElementById("pilha").innerHTML = topo;
+  }
+}
+</script>
+</html>

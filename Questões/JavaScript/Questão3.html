@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="Pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTIMIZZEI | 03 </title>
+    <style>
+        body{   
+            background-color: #363636;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            color: white;
+        }
+        .box-nav{
+            background-color: #1C1C1C;
+            padding: 25px;
+            border-radius: 15px;
+
+        }
+        .box{
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+        input{
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 25%;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 30%;
+            background-color:  #383a59;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-nav">
+        <h1>Questão 03</h1>
+        <h2>Escreva uma classe em PHP ou JavaScript chamada "Livro" que possua os atributos "título", "autor" e "ano de lançamento". A classe deve possuir um método construtor que inicialize os atributos e métodos getter e setter para cada atributo.
+        </h2>
+    </div>
+    <div class="box">
+        <p>Informe o Título, Autor e Ano do Lançamento do Livror</p>
+        <input type="text" id="titulo" placeholder="Digite o título">
+        <input type="text" id="autor" placeholder="Digite o autor">
+        <input type="number" id="anoLancamento" placeholder="Digite o ano de lançamento">
+        <br><br>
+        
+        <button onclick="criarLivro()">Enviar</button>
+        <br><br>
+        <div id="livro"></div>
+    </div> 
+</body>
+<script>
+    class Livro {
+      constructor(titulo, autor, anoLancamento) {
+        this._titulo = titulo;
+        this._autor = autor;
+        this._anoLancamento = anoLancamento;
+      }
+      
+      get titulo() {
+        return this._titulo;
+      }
+      
+      set titulo(novoTitulo) {
+        this._titulo = novoTitulo;
+      }
+      
+      get autor() {
+        return this._autor;
+      }
+      
+      set autor(novoAutor) {
+        this._autor = novoAutor;
+      }
+      
+      get anoLancamento() {
+        return this._anoLancamento;
+      }
+      
+      set anoLancamento(novoAnoLancamento) {
+        this._anoLancamento = novoAnoLancamento;
+      }
+    }   
+    
+   function criarLivro() {
+			const titulo = document.getElementById("titulo").value;
+			const autor = document.getElementById("autor").value;
+			const anoLancamento = document.getElementById("anoLancamento").value;
+
+			const livro = new Livro(titulo, autor, anoLancamento); 
+            const divLivro = document.getElementById("livro");
+    divLivro.innerHTML = `Título: ${livro.titulo} <br> Autor: ${livro.autor} <br> Ano de Lançamento: ${livro.anoLancamento}`;
+}       
+</script>
+</html>
