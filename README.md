@@ -1,5 +1,5 @@
 # Teste_Otimizzei
-Um pequeno teste composto por 4 questões realizado durante uma entrevista da empresa Otimizzei Tecnologia para a área de desenvolverdor web. 
+Um pequeno teste composto por 4 questões realizado durante uma entrevista da empresa Otimizzei Tecnologia para a vaga de desenvolverdor web. 
 * As questões deste teste foram resolvidas utilizando JavaScript. Além disso, foi criado uma interface gráfica para rodar os problemas utilizando HTML e CSS. 
 * Todas as questões e resoluções podem ser encontradas e conferidas na pasta ``Questões`` e ``JavaScript``.
 
